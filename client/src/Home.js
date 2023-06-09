@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
-import { WatchedContext } from './App'
 import MovieList from './MovieList';
+import './Home.css';
 
 
 function Home() {

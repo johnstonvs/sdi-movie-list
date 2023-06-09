@@ -9,7 +9,6 @@ const MovieList = ({ word }) => {
   const { watched } = useContext(WatchedContext)
 
   useEffect(() => {
-    console.log(word, 'LSIT')
     if (word) {
       fetch(`http://localhost:8080/movies?title=${word}`)
         .then(res => res.json())
@@ -42,7 +41,7 @@ const MovieList = ({ word }) => {
       <div className="MovieList">
         {showWatched ? watched.map((movie) => <p>{movie.title}</p>) : movies.map((movie, key) => {
           return (
-            <ListItem newItem={movie}/>
+            <ListItem key={key} newItem={movie}/>
           )
         })}
         <br/>
